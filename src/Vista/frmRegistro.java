@@ -45,16 +45,17 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtEdad = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 153));
         jLabel1.setText("Registro de usuarios");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
         txtNombre.setBackground(new java.awt.Color(204, 204, 204));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +85,7 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel7.setText("Correo");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        btnRegistrarme.setBackground(new java.awt.Color(204, 204, 255));
+        btnRegistrarme.setBackground(new java.awt.Color(255, 204, 153));
         btnRegistrarme.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnRegistrarme.setText("Registrarme");
         jPanel1.add(btnRegistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 50));
@@ -93,9 +94,9 @@ public class frmRegistro extends javax.swing.JFrame {
         txtIrRegistro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtIrRegistro.setForeground(new java.awt.Color(255, 255, 255));
         txtIrRegistro.setText("¿Ya tienes una cuenta ?");
-        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
+        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
 
-        btnIrLogin.setBackground(new java.awt.Color(204, 204, 255));
+        btnIrLogin.setBackground(new java.awt.Color(255, 204, 153));
         btnIrLogin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnIrLogin.setText("Iniciar Sesión");
         btnIrLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public class frmRegistro extends javax.swing.JFrame {
                 btnIrLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIrLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 130, 40));
+        jPanel1.add(btnIrLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 130, 40));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -146,6 +147,9 @@ public class frmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 110, 50));
+
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,6 +234,7 @@ public class frmRegistro extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrarme;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

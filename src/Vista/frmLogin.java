@@ -12,6 +12,7 @@ public class frmLogin extends javax.swing.JFrame {
     public frmLogin() {
         initComponents();
         this.setLocationRelativeTo(this);
+        
     }
     
     public static void initFrmLogin(){
@@ -40,16 +41,17 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtIrRegistro = new javax.swing.JLabel();
         btnIrARegistro = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnIngresar.setBackground(new java.awt.Color(204, 204, 255));
+        btnIngresar.setBackground(new java.awt.Color(255, 204, 153));
         btnIngresar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnIngresar.setText("Continuar");
-        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 130, 50));
+        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 130, 50));
 
         txtContraseña.setBackground(new java.awt.Color(204, 204, 204));
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
@@ -57,12 +59,12 @@ public class frmLogin extends javax.swing.JFrame {
                 txtContraseñaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 390, 52));
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 390, 52));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 153));
         jLabel1.setText("Inicio de sesión");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         txtCorreo.setBackground(new java.awt.Color(204, 204, 204));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
@@ -70,27 +72,27 @@ public class frmLogin extends javax.swing.JFrame {
                 txtCorreoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 390, 52));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 390, 52));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Correo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         txtIrRegistro.setBackground(new java.awt.Color(0, 0, 0));
         txtIrRegistro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtIrRegistro.setForeground(new java.awt.Color(255, 255, 255));
         txtIrRegistro.setText("¿No tienes cuenta? ");
-        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
+        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
 
-        btnIrARegistro.setBackground(new java.awt.Color(204, 204, 255));
+        btnIrARegistro.setBackground(new java.awt.Color(255, 204, 153));
         btnIrARegistro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnIrARegistro.setText("Registrarme");
         btnIrARegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -98,13 +100,19 @@ public class frmLogin extends javax.swing.JFrame {
                 btnIrARegistroActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIrARegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 130, 40));
+        jPanel1.add(btnIrARegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 130, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/logo.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 1150, 710));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,6 +176,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtContraseña;
     public javax.swing.JTextField txtCorreo;

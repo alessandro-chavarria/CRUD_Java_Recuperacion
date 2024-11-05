@@ -50,22 +50,23 @@ public class frmCrud extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtEstado = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 32)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel1.setText("CRUD");
+        jLabel1.setForeground(new java.awt.Color(255, 204, 153));
+        jLabel1.setText("Pedidos");
         jLabel1.setAlignmentY(0.1F);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 100, 62));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 140, 62));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +84,7 @@ public class frmCrud extends javax.swing.JFrame {
         txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 270, 36));
 
-        btnLimpiar.setBackground(new java.awt.Color(204, 204, 255));
+        btnLimpiar.setBackground(new java.awt.Color(255, 204, 153));
         btnLimpiar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +94,7 @@ public class frmCrud extends javax.swing.JFrame {
         });
         jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 90, 40));
 
-        btnEliminar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEliminar.setBackground(new java.awt.Color(255, 204, 153));
         btnEliminar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public class frmCrud extends javax.swing.JFrame {
         });
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 90, 40));
 
-        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEditar.setBackground(new java.awt.Color(255, 204, 153));
         btnEditar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnEditar.setText("Actualizar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +114,7 @@ public class frmCrud extends javax.swing.JFrame {
         });
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 120, 40));
 
-        btnAgregar.setBackground(new java.awt.Color(204, 204, 255));
+        btnAgregar.setBackground(new java.awt.Color(255, 204, 153));
         btnAgregar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -179,11 +180,15 @@ public class frmCrud extends javax.swing.JFrame {
         jLabel9.setText("Estado:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, -1, -1));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/fondo taller.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 810, 390));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,6 +259,7 @@ public class frmCrud extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
