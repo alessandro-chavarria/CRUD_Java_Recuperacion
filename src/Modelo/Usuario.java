@@ -15,12 +15,6 @@ public class Usuario {
         this.ID_Usuario = ID_Usuario;
     }
 
-    private String ID_Usuario;
-    private String Nombre;
-    private String Contraseña;
-
-
-
     public String getNombre() {
         return Nombre;
     }
@@ -29,28 +23,65 @@ public class Usuario {
         this.Nombre = Nombre;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getApellidos() {
+        return Apellidos;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setApellidos(String Apellidos) {
+        this.Apellidos = Apellidos;
     }
-    
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }
+
+   
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+  
+
+    private String ID_Usuario;
+    private String Nombre;
+    private String Apellidos;
+    private String Correo;
+    private String Contrasena;
+    private int Edad;
+
     
        public void GuardarUsuario() {
         
         Connection conexion = ClaseConexion.getConexion();
         try {
             
-            PreparedStatement addPelicula = conexion.prepareStatement("INSERT INTO tbUsuario(ID, Nombre, Contrasena) VALUES (?, ?, ?)");
-            
-            addPelicula.setString(1, UUID.randomUUID().toString());
-            addPelicula.setString(2, getNombre());
-            addPelicula.setString(3, getContraseña());
+            PreparedStatement agregarUsuario = conexion.prepareStatement("INSERT INTO tbUsuario(ID, Nombre, Apellidos, Correo, Contrasena, Edad) VALUES (?, ?, ?, ?, ?, ?)");
+            agregarUsuario.setString(1, UUID.randomUUID().toString());
+            agregarUsuario.setString(2, getNombre());
+            agregarUsuario.setString(3, getApellidos());
+            agregarUsuario.setString(4, getCorreo());
+            agregarUsuario.setString(5, getContrasena());
+            agregarUsuario.setInt(6, getEdad());
  
             
-            addPelicula.executeUpdate();
+            agregarUsuario.executeUpdate();
  
         } catch (SQLException ex) {
             System.out.println("este es el error en el Modeloo:metodo guardar " + ex);
@@ -65,10 +96,10 @@ public class Usuario {
         boolean resultado = false;
 
         try {
-            String sql = "SELECT * FROM tbUsuario WHERE Nombre = ? AND Contrasena = ?";
+            String sql = "SELECT * FROM tbUsuario WHERE Correo = ? AND Contrasena = ?";
             PreparedStatement statement = conexion.prepareStatement(sql);
             statement.setString(1, getNombre());
-            statement.setString(2, getContraseña());
+            statement.setString(2, getContrasena());
 
             ResultSet resultSet = statement.executeQuery();
 

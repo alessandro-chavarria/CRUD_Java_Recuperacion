@@ -33,57 +33,69 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnRegistrarme = new javax.swing.JButton();
         txtIrRegistro = new javax.swing.JLabel();
         btnIrLogin = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtApellidos = new javax.swing.JTextField();
+        txtContrasena = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtEdad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
         jLabel1.setText("Registro de usuarios");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
+        txtNombre.setBackground(new java.awt.Color(204, 204, 204));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 469, 52));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 260, 52));
 
-        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.setBackground(new java.awt.Color(204, 204, 204));
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContraseñaActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 469, 52));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 260, 52));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel6.setText("Nombre:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Nombre");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel7.setText("Contraseña:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Correo");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        btnRegistrarme.setBackground(new java.awt.Color(204, 204, 204));
+        btnRegistrarme.setBackground(new java.awt.Color(204, 204, 255));
         btnRegistrarme.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnRegistrarme.setText("Registrarme");
-        jPanel1.add(btnRegistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 240, 70));
+        jPanel1.add(btnRegistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 50));
 
-        txtIrRegistro.setBackground(new java.awt.Color(0, 0, 0));
+        txtIrRegistro.setBackground(new java.awt.Color(255, 255, 255));
         txtIrRegistro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        txtIrRegistro.setForeground(new java.awt.Color(255, 255, 255));
         txtIrRegistro.setText("¿Ya tienes una cuenta ?");
-        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, -1, -1));
+        jPanel1.add(txtIrRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
 
-        btnIrLogin.setBackground(new java.awt.Color(204, 204, 204));
+        btnIrLogin.setBackground(new java.awt.Color(204, 204, 255));
         btnIrLogin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnIrLogin.setText("Iniciar Sesión");
         btnIrLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +103,49 @@ public class frmRegistro extends javax.swing.JFrame {
                 btnIrLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIrLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 130, 40));
+        jPanel1.add(btnIrLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 130, 40));
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Apellidos");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        txtApellidos.setBackground(new java.awt.Color(204, 204, 204));
+        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 260, 52));
+
+        txtContrasena.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContrasenaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 260, 52));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Contraseña");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Edad");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
+
+        txtEdad.setBackground(new java.awt.Color(204, 204, 204));
+        txtEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEdadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 110, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,13 +169,25 @@ public class frmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtContraseñaActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void btnIrLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIrLoginActionPerformed
+
+    private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidosActionPerformed
+
+    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContrasenaActionPerformed
+
+    private void txtEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,10 +229,16 @@ public class frmRegistro extends javax.swing.JFrame {
     public javax.swing.JButton btnIrLogin;
     public javax.swing.JButton btnRegistrarme;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtContraseña;
+    public javax.swing.JTextField txtApellidos;
+    public javax.swing.JTextField txtContrasena;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtEdad;
     private javax.swing.JLabel txtIrRegistro;
     public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

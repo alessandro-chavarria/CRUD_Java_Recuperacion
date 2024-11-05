@@ -30,16 +30,26 @@ public class frmCrud extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        txtEdad = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
-        txtCorreo = new javax.swing.JTextField();
-        txtPeso = new javax.swing.JTextField();
+        txtModeloCarro = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtMarcaCarro = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtbCrud = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtAnoCarro = new javax.swing.JTextField();
+        txtProblema = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtEstado = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -52,18 +62,28 @@ public class frmCrud extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 32)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 102, 255));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
         jLabel1.setText("CRUD");
         jLabel1.setAlignmentY(0.1F);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 100, 62));
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Teléfono (Cliente):");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Modelo del Vehículo:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+
         txtNombre.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 357, 36));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 270, 36));
 
-        txtEdad.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 357, 36));
+        txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 270, 36));
 
-        btnLimpiar.setBackground(new java.awt.Color(153, 102, 255));
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 255));
         btnLimpiar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +91,9 @@ public class frmCrud extends javax.swing.JFrame {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 90, 40));
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 90, 40));
 
-        btnEliminar.setBackground(new java.awt.Color(153, 102, 255));
+        btnEliminar.setBackground(new java.awt.Color(204, 204, 255));
         btnEliminar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,9 +101,9 @@ public class frmCrud extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 90, 40));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 90, 40));
 
-        btnEditar.setBackground(new java.awt.Color(153, 102, 255));
+        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
         btnEditar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnEditar.setText("Actualizar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,9 +111,9 @@ public class frmCrud extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 120, 40));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 120, 40));
 
-        btnAgregar.setBackground(new java.awt.Color(153, 102, 255));
+        btnAgregar.setBackground(new java.awt.Color(204, 204, 255));
         btnAgregar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,13 +121,18 @@ public class frmCrud extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 90, 40));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 90, 40));
 
-        txtCorreo.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 210, 36));
+        txtModeloCarro.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtModeloCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 130, 36));
 
-        txtPeso.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 90, 36));
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Marca del Vehículo:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        txtMarcaCarro.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtMarcaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 120, 36));
 
         jtbCrud.setBackground(new java.awt.Color(204, 204, 204));
         jtbCrud.setModel(new javax.swing.table.DefaultTableModel(
@@ -124,6 +149,35 @@ public class frmCrud extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jtbCrud);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 800, 240));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Nombre (Cliente):");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Año del Vehículo:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
+        txtAnoCarro.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtAnoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 140, 36));
+
+        txtProblema.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 270, 50));
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Problema:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, -1, -1));
+
+        txtEstado.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 140, 36));
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Estado:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,12 +254,22 @@ public class frmCrud extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jtbCrud;
-    public javax.swing.JTextField txtCorreo;
-    public javax.swing.JTextField txtEdad;
+    public javax.swing.JTextField txtAnoCarro;
+    public javax.swing.JTextField txtEstado;
+    public javax.swing.JTextField txtMarcaCarro;
+    public javax.swing.JTextField txtModeloCarro;
     public javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtPeso;
+    public javax.swing.JTextField txtProblema;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

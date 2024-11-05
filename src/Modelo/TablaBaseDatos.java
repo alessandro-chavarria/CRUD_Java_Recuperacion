@@ -4,12 +4,20 @@ import Vista.frmCrud;
 import java.sql.*;
 import java.util.UUID;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class TablaBaseDatos {
 
-    public String getID() {
+    private String id;
+    private String nombre;
+    private String telefono;
+    private String marca;
+    private String modelo;
+    private int ano;
+    private String problema;
+    private String estado;
+    
+    public String getId() {
         return id;
     }
 
@@ -25,51 +33,68 @@ public class TablaBaseDatos {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public int getPeso() {
-        return peso;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    private String id;
-    private String nombre;
-    private int edad;
-    private int peso;
-    private String correo;
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public String getProblema() {
+        return problema;
+    }
+
+    public void setProblema(String problema) {
+        this.problema = problema;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
     
     public void Guardar() {
-        //Creamos una variable igual a ejecutar el método de la clase de conexión
         Connection conexion = ClaseConexion.getConexion();
         try {
-            //Creamos el PreparedStatement que ejecutará la Query
-            PreparedStatement nuevoRegistro = conexion.prepareStatement("INSERT INTO TablaBaseDatos (ID, Nombre,Edad,Peso,Correo) VALUES(?,?,?,?,?)");
-            //Establecer valores de la consulta SQL
+            PreparedStatement nuevoRegistro = conexion.prepareStatement("INSERT INTO tbTaller (ID, Nombre,Telefono,Marca,Modelo,Ano,Problema,Estado) VALUES(?,?,?,?,?,?,?,?)");
             nuevoRegistro.setString(1,UUID.randomUUID().toString());
             nuevoRegistro.setString(2, getNombre());
-            nuevoRegistro.setInt(3, getEdad());
-            nuevoRegistro.setInt(4, getPeso());
-            nuevoRegistro.setString(5, getCorreo());
+            nuevoRegistro.setString(3, getTelefono());
+            nuevoRegistro.setString(4, getMarca());
+            nuevoRegistro.setString(5, getModelo());
+            nuevoRegistro.setInt(6, getAno());
+            nuevoRegistro.setString(7, getProblema());
+            nuevoRegistro.setString(8, getEstado());
             
-            //Ejecutar la consulta
             nuevoRegistro.executeUpdate();
             
         } catch (SQLException ex) {
@@ -83,20 +108,24 @@ public class TablaBaseDatos {
         //Definimos el Modeloo de la tabla
         DefaultTableModel ModeloDeDatos = new DefaultTableModel();
         
-        ModeloDeDatos.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Edad", "Peso","Correo"});
+        ModeloDeDatos.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Telefono", "Marca","Modelo","Ano","Problema","Estado"});
         try {
             //Creamos un Statement
             Statement statement = conexion.createStatement();
             //Ejecutamos el Statement con la consulta y lo asignamos a una variable de tipo ResultSet
-            ResultSet rs = statement.executeQuery("SELECT * FROM TablaBaseDatos");
+            ResultSet rs = statement.executeQuery("SELECT * FROM tbTaller");
             //Recorremos el ResultSet
             while (rs.next()) {
                 //Llenamos el Modeloo por cada vez que recorremos el resultSet
                 ModeloDeDatos.addRow(new Object[]{rs.getString("ID"), 
-                    rs.getString("NOMBRE"), 
-                    rs.getInt("EDAD"), 
-                    rs.getString("PESO"),
-                    rs.getString("CORREO")});
+                    rs.getString("nombre"), 
+                    rs.getString("telefono"), 
+                    rs.getString("marca"),
+                    rs.getString("modelo"),
+                    rs.getInt("Ano"),
+                    rs.getString("Problema"),
+                    rs.getString("Estado")
+                });
             }
             //Asignamos el nuevo Modeloo lleno a la tabla
             tabla.setModel(ModeloDeDatos);
@@ -115,7 +144,7 @@ public class TablaBaseDatos {
         String id = tabla.getValueAt(filaSeleccionada, 0).toString();
         //borramos 
         try {
-            PreparedStatement eliminarRegistro = conexion.prepareStatement("DELETE FROM TablaBaseDatos WHERE ID = ?");
+            PreparedStatement eliminarRegistro = conexion.prepareStatement("DELETE FROM tbTaller WHERE ID = ?");
             eliminarRegistro.setString(1, id);
             eliminarRegistro.executeUpdate();
         } catch (Exception e) {
@@ -129,17 +158,23 @@ public class TablaBaseDatos {
  
         // Debemos asegurarnos que haya una fila seleccionada antes de acceder a sus valores
         if (filaSeleccionada != -1) {
-            String UUIDDeTb = Vista.jtbCrud.getValueAt(filaSeleccionada, 0).toString();
-            String NombreDeTB = Vista.jtbCrud.getValueAt(filaSeleccionada, 1).toString();
-            String EdadDeTb = Vista.jtbCrud.getValueAt(filaSeleccionada, 2).toString();
-            String pesoDeTB = Vista.jtbCrud.getValueAt(filaSeleccionada, 3).toString();
-            String correoDeTB = Vista.jtbCrud.getValueAt(filaSeleccionada, 4).toString();
+            String uuid = Vista.jtbCrud.getValueAt(filaSeleccionada, 0).toString();
+            String nombre = Vista.jtbCrud.getValueAt(filaSeleccionada, 1).toString();
+            String telefono = Vista.jtbCrud.getValueAt(filaSeleccionada, 2).toString();
+            String marca = Vista.jtbCrud.getValueAt(filaSeleccionada, 3).toString();
+            String modelo = Vista.jtbCrud.getValueAt(filaSeleccionada, 4).toString();
+            String ano = Vista.jtbCrud.getValueAt(filaSeleccionada, 5).toString();
+            String problema = Vista.jtbCrud.getValueAt(filaSeleccionada, 6).toString();
+            String estado = Vista.jtbCrud.getValueAt(filaSeleccionada, 7).toString();
  
             // Establece los valores en los campos de texto
-            Vista.txtNombre.setText(NombreDeTB);
-            Vista.txtEdad.setText(EdadDeTb);
-            Vista.txtPeso.setText(pesoDeTB);
-            Vista.txtCorreo.setText(correoDeTB);
+            Vista.txtNombre.setText(nombre);
+            Vista.txtTelefono.setText(telefono);
+            Vista.txtMarcaCarro.setText(marca);
+            Vista.txtModeloCarro.setText(modelo);
+            Vista.txtAnoCarro.setText(ano);
+            Vista.txtProblema.setText(problema);
+            Vista.txtEstado.setText(estado);
         }
     }
     
@@ -154,13 +189,17 @@ public class TablaBaseDatos {
             String ID = tabla.getValueAt(filaSeleccionada, 0).toString();
             try { 
                 //Ejecutamos la Query
-                PreparedStatement actualizarRegistro = conexion.prepareStatement("UPDATE TablaBaseDatos SET Nombre = ?, Edad = ?, Peso = ?, Correo = ? WHERE ID = ?");
-                actualizarRegistro.setString(1, getNombre());
-                actualizarRegistro.setInt(2, getEdad());
-                actualizarRegistro.setInt(3, getPeso());
-                actualizarRegistro.setString(4, getCorreo());
-                actualizarRegistro.setString(5, ID);
-                actualizarRegistro.executeUpdate();
+                PreparedStatement actualizarRegistro = conexion.prepareStatement("UPDATE tbTaller SET Nombre = ?, Telefono = ?, Marca = ?, Modelo = ? , Ano = ?, Problema = ?, Estado = ? WHERE ID = ?");
+            actualizarRegistro.setString(1, getNombre());
+            actualizarRegistro.setString(2, getTelefono());
+            actualizarRegistro.setString(3, getMarca());
+            actualizarRegistro.setString(4, getModelo());
+            actualizarRegistro.setInt(5, getAno());
+            actualizarRegistro.setString(6, getProblema());
+            actualizarRegistro.setString(7, getEstado());
+            actualizarRegistro.setString(8,ID);
+                
+            actualizarRegistro.executeUpdate();
                 
             } catch (Exception e) {
                 System.out.println("Error: " + e);

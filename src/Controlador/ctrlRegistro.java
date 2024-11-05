@@ -27,9 +27,12 @@ public class ctrlRegistro implements MouseListener{
         
         if(e.getSource() == vista.btnRegistrarme){
             Modeloo.setNombre(vista.txtNombre.getText());
-            Modeloo.setContraseña(Modeloo.convertirSHA256(vista.txtContraseña.getText()));
+            Modeloo.setApellidos(vista.txtApellidos.getText());
+            Modeloo.setCorreo(vista.txtCorreo.getText());
+            Modeloo.setContrasena(Modeloo.convertirSHA256(vista.txtContrasena.getText()));
+            Modeloo.setEdad(Integer.parseInt(vista.txtEdad.getText()));
             
-            if(vista.txtContraseña.getText().isEmpty() || vista.txtNombre.getText().isEmpty())
+            if(vista.txtCorreo.getText().isEmpty() || vista.txtNombre.getText().isEmpty() || vista.txtApellidos.getText().isEmpty() || vista.txtEdad.getText().isEmpty() || vista.txtContrasena.getText().isEmpty())
             {
                 JOptionPane.showMessageDialog(vista, "Complete los campos");   
             }

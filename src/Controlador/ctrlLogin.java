@@ -8,11 +8,11 @@ import javax.swing.JOptionPane;
 
 public class ctrlLogin implements MouseListener {
 
-    Usuario Modeloo;
+    Usuario Modelo;
     frmLogin vista;
 
     public ctrlLogin(Usuario Modeloo, frmLogin Vista) {
-        this.Modeloo = Modeloo;
+        this.Modelo = Modeloo;
         this.vista = Vista;
 
         vista.btnIngresar.addMouseListener(this);
@@ -22,10 +22,10 @@ public class ctrlLogin implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == vista.btnIngresar) {
-            Modeloo.setNombre(vista.txtUsuario.getText());
-            Modeloo.setContraseña(Modeloo.convertirSHA256(vista.txtContraseña.getText()));
+            Modelo.setNombre(vista.txtCorreo.getText());
+            Modelo.setContrasena(Modelo.convertirSHA256(vista.txtContraseña.getText()));
            
-            boolean comprobar = Modeloo.iniciarSesion();
+            boolean comprobar = Modelo.iniciarSesion();
 
             if (comprobar == true) {
                 JOptionPane.showMessageDialog(vista,"Usuario existe, ¡Bienvenido!");
