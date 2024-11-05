@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 
 public class ctrlLogin implements MouseListener {
-
+// comentario solo para hacer un commit 
     Usuario Modelo;
     frmLogin vista;
 
